@@ -1,0 +1,2 @@
+rootProject.name = "anydo_niv_angert"
+include ':app'
