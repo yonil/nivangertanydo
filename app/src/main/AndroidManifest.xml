@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.niv_angert.anydo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".AnyDoTaskApp"
         android:allowBackup="true"
@@ -10,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Anydo_niv_angert">
-        <activity android:name=".presentation.main.MainActivity">
+        <activity android:name=".presentation.color.ColorActivity"></activity>
+        <activity
+            android:name=".presentation.main.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

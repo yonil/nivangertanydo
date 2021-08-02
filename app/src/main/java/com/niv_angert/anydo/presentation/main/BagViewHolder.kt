@@ -1,14 +1,11 @@
 package com.niv_angert.anydo.presentation.main
 
-import android.app.ActivityOptions
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.niv_angert.anydo.data.entities.Bag
 import com.niv_angert.anydo.databinding.ViewHolderBagBinding
-import com.niv_angert.anydo.presentation.color.ColorActivity
 
 
 /**
@@ -22,7 +19,7 @@ class BagViewHolder(itemView: View) :
 
     // Initialization ------------------------------------------------------------------------------
 
-    fun bind(item: Bag, clickCallback: (marketItemCircleVw: View) -> Unit) {
+    fun bind(item: Bag, clickCallback: (marketItemCircleVw: View, time: Long) -> Unit) {
 
         binding.run {
 
@@ -39,7 +36,7 @@ class BagViewHolder(itemView: View) :
         }
 
         binding.marketItemLayout.setOnClickListener {
-            clickCallback(binding.marketItemCircleVw)
+            clickCallback(binding.marketItemCircleVw, System.currentTimeMillis())
         }
     }
 }

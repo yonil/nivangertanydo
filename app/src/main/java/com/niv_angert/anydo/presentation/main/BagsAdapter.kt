@@ -11,7 +11,7 @@ import com.niv_angert.anydo.data.entities.Bag
 /**
  *Created by Niv Angert on 02/08/2021
  **/
-class BagsAdapter(private val clickCallback: (marketItemCircleVw: View) -> Unit) :
+class BagsAdapter(private val clickCallback: (marketItemCircleVw: View, time: Long) -> Unit) :
     ListAdapter<Bag, BagViewHolder>(BagsDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BagViewHolder {
@@ -28,6 +28,8 @@ class BagsAdapter(private val clickCallback: (marketItemCircleVw: View) -> Unit)
         holder.bind(getItem(position), clickCallback)
     }
 }
+
+// BagsDiffUtil ------------------------------------------------------------------------------------
 
 class BagsDiffUtil : DiffUtil.ItemCallback<Bag>() {
 
