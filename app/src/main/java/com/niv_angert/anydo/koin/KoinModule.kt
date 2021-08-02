@@ -4,6 +4,7 @@ import com.niv_angert.anydo.data.repositories.GroceriesRepository
 import com.niv_angert.anydo.data.repositories.GroceriesRepositoryImpl
 import com.niv_angert.anydo.data.sources.remote.RemoteHelper
 import com.niv_angert.anydo.data.sources.remote.RemoteHelperImpl
+import com.niv_angert.anydo.domain.ObserveBagsUseCase
 import com.niv_angert.anydo.presentation.main.MainViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
@@ -23,11 +24,11 @@ val appModule = module {
 
     // Repositories --------------------------------------------------------------------------------
 
-    factory<GroceriesRepository> { GroceriesRepositoryImpl(get()) }
+    single<GroceriesRepository> { GroceriesRepositoryImpl(get()) }
 
     // UseCases ------------------------------------------------------------------------------------
 
-    //todo Domain UseCases!!
+    single<ObserveBagsUseCase> { ObserveBagsUseCase(get()) }
 
     // Activity ViewModels -------------------------------------------------------------------------
 

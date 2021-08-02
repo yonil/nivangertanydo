@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">anydo_niv_angert</string>
+
+    <string name="ic_connection_toggle">Connection Toggle</string>
+    <string name="ic_connected">Connected</string>
+    <string name="ic_disconnected">Disconnected</string>
 </resources>
